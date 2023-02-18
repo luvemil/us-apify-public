@@ -1,0 +1,13 @@
+.stack-work/
+*~
+
+data
+
+.env
+!.env.sample
+
+.testenv
+!.testenv.sample
+
+.runenv
+!.runenv.sample

@@ -1,0 +1,116 @@
+name:                us-apify-public
+version:             0.1.0.0
+github:              "luvemil/us-apify-public"
+license:             BSD3
+author:              "Marco Tarantino"
+maintainer:          "taran.marco@protonmail.com"
+copyright:           "2023 Marco Tarantino"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/luvemil/us-apify-public#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - aws-lambda-haskell-runtime >= 3.0.0
+  - aeson
+  - polysemy
+  - polysemy-plugin
+  - amazonka
+  - amazonka-dynamodb
+  - amazonka-s3
+  - containers
+  - text
+  - lens
+  - generic-lens
+  - transformers
+  - filepath
+  - wreq
+  - bytestring
+  - http-types
+  - tomland
+  - case-insensitive
+  - scalpel
+  - optparse-generic
+  - lens-aeson
+  - uuid
+  - conduit
+  - unordered-containers
+  - us-lib-public
+  - us-lib-private
+
+ghc-options:
+  - -Wall
+  - -Wincomplete-uni-patterns
+  - -Wincomplete-record-updates
+  - -Wcompat
+  - -Widentities
+  - -Wredundant-constraints
+  - -fhide-source-paths
+  - -Wpartial-fields
+  - -fplugin=Polysemy.Plugin
+
+library:
+  source-dirs: src
+
+executables:
+  bootstrap:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -O2
+    - -with-rtsopts=-N
+    - -L/lib64
+    dependencies:
+    - us-apify-public
+
+tests:
+  bootstrap-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - us-apify-public
+      - hspec
+      # - QuickCheck
+
+default-extensions:
+  - BangPatterns
+  - ConstraintKinds
+  - DataKinds
+  - DeriveGeneric
+  - DerivingStrategies
+  - DerivingVia
+  - FlexibleContexts
+  - FlexibleInstances
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - ImportQualifiedPost
+  - InstanceSigs
+  - KindSignatures
+  - LambdaCase
+  - NamedFieldPuns
+  - MultiParamTypeClasses
+  - OverloadedStrings
+  - OverloadedLabels
+  - PolyKinds
+  - RankNTypes
+  - RecordWildCards
+  - ScopedTypeVariables
+  - TypeApplications
+  - TypeFamilies
+  - TypeOperators

@@ -1,0 +1,4 @@
+export TEST_AWS_INTEGRATION=False
+export TEST_AWS_REGION=<region>
+export TEST_AWS_BUCKET=<bucket>
+export TEST_AWS_S3_PATH=<objKey>

@@ -1,0 +1,222 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           us-apify-public
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/luvemil/us-apify-public#readme>
+homepage:       https://github.com/luvemil/us-apify-public#readme
+bug-reports:    https://github.com/luvemil/us-apify-public/issues
+author:         Marco Tarantino
+maintainer:     taran.marco@protonmail.com
+copyright:      2023 Marco Tarantino
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/luvemil/us-apify-public
+
+library
+  exposed-modules:
+      Lambdas.GetFullData.Actions
+      Lambdas.GetFullData.Handlers
+      Lambdas.Types
+      Lib
+  other-modules:
+      Paths_us_apify_public
+  hs-source-dirs:
+      src
+  default-extensions:
+      BangPatterns
+      ConstraintKinds
+      DataKinds
+      DeriveGeneric
+      DerivingStrategies
+      DerivingVia
+      FlexibleContexts
+      FlexibleInstances
+      GADTs
+      GeneralizedNewtypeDeriving
+      ImportQualifiedPost
+      InstanceSigs
+      KindSignatures
+      LambdaCase
+      NamedFieldPuns
+      MultiParamTypeClasses
+      OverloadedStrings
+      OverloadedLabels
+      PolyKinds
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+      TypeApplications
+      TypeFamilies
+      TypeOperators
+  ghc-options: -Wall -Wincomplete-uni-patterns -Wincomplete-record-updates -Wcompat -Widentities -Wredundant-constraints -fhide-source-paths -Wpartial-fields -fplugin=Polysemy.Plugin
+  build-depends:
+      aeson
+    , amazonka
+    , amazonka-dynamodb
+    , amazonka-s3
+    , aws-lambda-haskell-runtime >=3.0.0
+    , base >=4.7 && <5
+    , bytestring
+    , case-insensitive
+    , conduit
+    , containers
+    , filepath
+    , generic-lens
+    , http-types
+    , lens
+    , lens-aeson
+    , optparse-generic
+    , polysemy
+    , polysemy-plugin
+    , scalpel
+    , text
+    , tomland
+    , transformers
+    , unordered-containers
+    , us-lib-private
+    , us-lib-public
+    , uuid
+    , wreq
+  default-language: Haskell2010
+
+executable bootstrap
+  main-is: Main.hs
+  other-modules:
+      Paths_us_apify_public
+  hs-source-dirs:
+      app
+  default-extensions:
+      BangPatterns
+      ConstraintKinds
+      DataKinds
+      DeriveGeneric
+      DerivingStrategies
+      DerivingVia
+      FlexibleContexts
+      FlexibleInstances
+      GADTs
+      GeneralizedNewtypeDeriving
+      ImportQualifiedPost
+      InstanceSigs
+      KindSignatures
+      LambdaCase
+      NamedFieldPuns
+      MultiParamTypeClasses
+      OverloadedStrings
+      OverloadedLabels
+      PolyKinds
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+      TypeApplications
+      TypeFamilies
+      TypeOperators
+  ghc-options: -Wall -Wincomplete-uni-patterns -Wincomplete-record-updates -Wcompat -Widentities -Wredundant-constraints -fhide-source-paths -Wpartial-fields -fplugin=Polysemy.Plugin -threaded -rtsopts -O2 -with-rtsopts=-N -L/lib64
+  build-depends:
+      aeson
+    , amazonka
+    , amazonka-dynamodb
+    , amazonka-s3
+    , aws-lambda-haskell-runtime >=3.0.0
+    , base >=4.7 && <5
+    , bytestring
+    , case-insensitive
+    , conduit
+    , containers
+    , filepath
+    , generic-lens
+    , http-types
+    , lens
+    , lens-aeson
+    , optparse-generic
+    , polysemy
+    , polysemy-plugin
+    , scalpel
+    , text
+    , tomland
+    , transformers
+    , unordered-containers
+    , us-apify-public
+    , us-lib-private
+    , us-lib-public
+    , uuid
+    , wreq
+  default-language: Haskell2010
+
+test-suite bootstrap-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Lambdas.GetFullData.ActionsSpec
+      Paths_us_apify_public
+  hs-source-dirs:
+      test
+  default-extensions:
+      BangPatterns
+      ConstraintKinds
+      DataKinds
+      DeriveGeneric
+      DerivingStrategies
+      DerivingVia
+      FlexibleContexts
+      FlexibleInstances
+      GADTs
+      GeneralizedNewtypeDeriving
+      ImportQualifiedPost
+      InstanceSigs
+      KindSignatures
+      LambdaCase
+      NamedFieldPuns
+      MultiParamTypeClasses
+      OverloadedStrings
+      OverloadedLabels
+      PolyKinds
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+      TypeApplications
+      TypeFamilies
+      TypeOperators
+  ghc-options: -Wall -Wincomplete-uni-patterns -Wincomplete-record-updates -Wcompat -Widentities -Wredundant-constraints -fhide-source-paths -Wpartial-fields -fplugin=Polysemy.Plugin -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , amazonka
+    , amazonka-dynamodb
+    , amazonka-s3
+    , aws-lambda-haskell-runtime >=3.0.0
+    , base >=4.7 && <5
+    , bytestring
+    , case-insensitive
+    , conduit
+    , containers
+    , filepath
+    , generic-lens
+    , hspec
+    , http-types
+    , lens
+    , lens-aeson
+    , optparse-generic
+    , polysemy
+    , polysemy-plugin
+    , scalpel
+    , text
+    , tomland
+    , transformers
+    , unordered-containers
+    , us-apify-public
+    , us-lib-private
+    , us-lib-public
+    , uuid
+    , wreq
+  default-language: Haskell2010
