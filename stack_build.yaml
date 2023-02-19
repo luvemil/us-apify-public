@@ -1,0 +1,22 @@
+resolver: nightly-2022-11-12
+
+packages:
+- .
+
+extra-deps:
+- git: https://github.com/luvemil/us-lib-public.git
+  commit: d4afe2b277321405fe89ba67d4d2cf135816d1ff
+- lib/us-lib-private
+- git: https://github.com/brendanhay/amazonka.git
+  commit: 2574d4161326b56e0d359bcd9ec6e57c25e94d0d
+  subdirs:
+    - lib/amazonka
+    - lib/amazonka-core
+    - lib/services/amazonka-sts
+    - lib/services/amazonka-sso
+    - lib/services/amazonka-s3
+    - lib/services/amazonka-dynamodb
+- git: https://github.com/eir-forsakring/aws-lambda-haskell-runtime.git
+  commit: 3845d73325036aa6871c51981ffc348917622c78
+- tomland-1.3.3.2@sha256:0b4a24f8584f636b7799d9044586762967978f9c225392493307617057f0d288,9063
+- validation-selective-0.1.0.2@sha256:c878846bfffeba69efa3b4866025f249656e0e0a129fed6d446eb602382d328b,3856

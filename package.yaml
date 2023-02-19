@@ -21,13 +21,15 @@ description:         Please see the README on GitHub at <https://github.com/luve
 
 dependencies:
   - base >= 4.7 && < 5
+  - us-lib-public
+  - us-lib-private
+  - amazonka
+  - amazonka-dynamodb
+  - amazonka-s3
   - aws-lambda-haskell-runtime >= 3.0.0
   - aeson
   - polysemy
   - polysemy-plugin
-  - amazonka
-  - amazonka-dynamodb
-  - amazonka-s3
   - containers
   - text
   - lens
@@ -45,8 +47,6 @@ dependencies:
   - uuid
   - conduit
   - unordered-containers
-  - us-lib-public
-  - us-lib-private
 
 ghc-options:
   - -Wall

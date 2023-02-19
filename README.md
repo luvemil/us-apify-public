@@ -34,3 +34,9 @@ The repository is configured to build a docker image containing the lambda, publ
 - `AWS_KEY_ID` and `AWS_SECRET_KEY`: the aws credentials
 - `TF_TOKEN`: an api token generated on terraform cloud
 - `TF_WORKSPACE`: the workspace on terraform cloud
+
+## Invoke lambda with sdk
+
+```
+aws lambda invoke --function-name <function> --cli-binary-format raw-in-base64-out --payload '{"type": "SAVE", "payload": "<payload>"}' out.json
+```

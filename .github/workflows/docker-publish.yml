@@ -35,6 +35,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        with:
+          repository: luvemil/us-lib-private
+          ref: ae85ad792a670585fb5246329f6865c380353eef
+          path: lib/us-lib-private
+          token: ${{ secrets.DEPLOY_TOKEN }}
 
       # Workaround: https://github.com/docker/build-push-action/issues/461
       - name: Setup Docker buildx

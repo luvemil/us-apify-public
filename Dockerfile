@@ -8,7 +8,10 @@ RUN mkdir -p /root/lambda-function/
 RUN cd /root/lambda-function
 WORKDIR /root/lambda-function/
 
-COPY package.yaml stack.yaml /root/lambda-function/
+COPY package.yaml /root/lambda-function/
+COPY stack_build.yaml /root/lambda-function/stack.yaml
+COPY lib /root/lambda-function/lib
+
 RUN stack build --dependencies-only \
     --flag cryptonite:-use_target_attributes
 
@@ -21,6 +24,8 @@ RUN stack build --dependencies-only \
 
 # Build the lambda
 COPY . /root/lambda-function/
+# Overwrite stack.yaml
+COPY stack_build.yaml /root/lambda-function/stack.yaml
 
 RUN stack build \
     --flag cryptonite:-use_target_attributes \

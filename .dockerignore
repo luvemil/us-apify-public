@@ -1,8 +1,9 @@
 .stack-work/
+build/
 *~
 
-lib/*
-!lib/.gitkeep
+*.toml
+!*.sample.toml
 
 data
 
