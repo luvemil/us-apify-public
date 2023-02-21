@@ -9,4 +9,6 @@ main = do
     putStrLn "Entrypoint"
 
 handler :: LRequest -> Context () -> IO (Either String String)
-handler (GetFullData profileName) _ = GFD.handler profileName >> pure (Right "OK")
+handler (GetFullData profileName) _ = do
+    putStrLn "Running GetFullData lambda handler"
+    GFD.handler profileName >> pure (Right "OK")
